@@ -1,0 +1,70 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+publishDir: public
+dataDir: content
+pagesDir: content
+models:
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: path
+        label: Path
+      - type: string
+        name: excerpt
+        label: Excerpt
+  example:
+    type: page
+    label: Example
+    folder: posts/example
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: path
+        label: Path
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: image
+        name: featuredImage
+        label: Featured Image
+      - type: string
+        name: excerpt
+        label: Excerpt
+      - type: date
+        name: created
+        label: Created
+      - type: date
+        name: updated
+        label: Updated
+  tags:
+    type: data
+    label: Tags
+    file: tags.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: name
+          label: Name
+        - type: string
+          name: color
+          label: Color
+        - type: image
+          name: icon
+          label: Icon
+        - type: boolean
+          name: featured
+          label: Featured
